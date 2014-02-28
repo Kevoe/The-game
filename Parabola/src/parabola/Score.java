@@ -37,8 +37,8 @@ public class Score extends JFrame implements Runnable, KeyListener
 	private int score;   // el puntaje de usuario.
 	private final int MIN = -5;    //Limite minimo al generar el numero random. 
 	private final int MAX = 6;    //Limite maximo al generar el numero random.
-	private static final int WIDTH = 1000;    //Ancho del JFrame
-	private static final int HEIGHT = 600;    //Alto del JFrame
+	private static final int WIDTH = 640;    //Ancho del JFrame
+	private static final int HEIGHT = 480;    //Alto del JFrame
 	private Image dbImage;	// Imagen a proyectar
 	private Image gameover;	// Imagen al finalizar el juego.
 	private Graphics dbg;	// Objeto grafico
@@ -69,12 +69,12 @@ public class Score extends JFrame implements Runnable, KeyListener
 		int posY = (int) (Math.random() *(HEIGHT / 4));    // posicion en y es un cuarto del JFrame
 		
 		//Se cargan las imágenes(cuadros) para la animación del elefante
-		Image elefante1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/elefante1.png"));
-		Image elefante2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/elefante2.png"));
-		Image elefante3 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/elefante3.png"));
-		Image elefante4 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/elefante4.png"));
-		Image elefante5 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/elefante5.png"));
-		Image elefante6 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/elefante6.png"));
+		Image elefante1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/elefante1.png"));
+		Image elefante2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/elefante2.png"));
+		Image elefante3 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/elefante3.png"));
+		Image elefante4 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/elefante4.png"));
+		Image elefante5 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/elefante5.png"));
+		Image elefante6 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/elefante6.png"));
 		
 		//Se crea la animación
 		animElefante = new Animacion();
@@ -90,18 +90,18 @@ public class Score extends JFrame implements Runnable, KeyListener
 		raton = new Raton[3];    //se crea y define el arreglo raton.
 		
 		//Se cargan las imágenes(cuadros) para la animación del ratón
-		Image raton1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse1.png"));
-		Image raton2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse2.png"));
-		Image raton3 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse3.png"));
-		Image raton4 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse4.png"));
-		Image raton5 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse5.png"));
-		Image raton6 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse6.png"));
-		Image raton7 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse7.png"));
-		Image raton8 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse8.png"));
-		Image raton9 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse9.png"));
-		Image raton10 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse10.png"));
-		Image raton11 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse11.png"));
-		Image raton12 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("imagenes/mouse12.png"));
+		Image raton1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse1.png"));
+		Image raton2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse2.png"));
+		Image raton3 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse3.png"));
+		Image raton4 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse4.png"));
+		Image raton5 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse5.png"));
+		Image raton6 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse6.png"));
+		Image raton7 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse7.png"));
+		Image raton8 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse8.png"));
+		Image raton9 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse9.png"));
+		Image raton10 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse10.png"));
+		Image raton11 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse11.png"));
+		Image raton12 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("parabola.images/mouse12.png"));
 		
 		//Se crea la animación
 		animRaton = new Animacion();
@@ -125,10 +125,10 @@ public class Score extends JFrame implements Runnable, KeyListener
 		}
 		
 		addKeyListener(this);
-		sonido = new SoundClip("elephant.wav");
-        rat = new SoundClip("mice.wav");
-	 	musica = new SoundClip("elephant_greeting.wav");
-	 	bomb = new SoundClip("Explosion.wav");
+		sonido = new SoundClip("parabola.sounds/elephant.wav");
+        rat = new SoundClip("parabola.sounds/mice.wav");
+	 	musica = new SoundClip("parabola.sounds/elephant_greeting.wav");
+	 	bomb = new SoundClip("parabola.sounds/Explosion.wav");
 		gameover = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("gameover.jpg"));	
 		musica.setLooping(true);
 		musica.play();
