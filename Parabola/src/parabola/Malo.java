@@ -14,8 +14,8 @@ import java.awt.Image;
 
 public class Malo extends Base {
     private static int contador;  
-    private int velX;  
-    private int velY;
+    private int veloX;  
+    private int veloY;
 
 	/**
 	 * Metodo constructor que hereda los atributos de la clase <code>Animal</code>.
@@ -25,8 +25,8 @@ public class Malo extends Base {
 	 */
 	public Malo(int posX,int posY,Image image,int vX,int vY){
 		super(posX,posY,image);
-                velX=vX;
-                velY=vY;
+                veloX=vX;
+                veloY=vY;
 	}
         
         public static void setContador(int cont) {
@@ -38,7 +38,7 @@ public class Malo extends Base {
     }  
         
         public void setVelX(int v) {
-        velX = v;  //define el valor de la velocidad
+        veloX = v;  //define el valor de la velocidad
     }
     
     /**
@@ -47,15 +47,15 @@ public class Malo extends Base {
      * @return valor de la velocidad del objeto de tipo <code>int</code>
      */
         public int getVelX() {
-        return velX;  //regresa el valor de la velocidad
+        return veloX;  //regresa el valor de la velocidad
     }
     
         public void setVelY(int v) {
-        velY = v;  //define el valor de la velocidad
+        veloY = v;  //define el valor de la velocidad
     }
     
         public int getVelY() {
-        return velY;  //regresa el valor de la velocidad
+        return veloY;  //regresa el valor de la velocidad
     }
         
         

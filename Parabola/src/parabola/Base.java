@@ -23,7 +23,7 @@ public class Base {
         private ArrayList frame;
         private int cuadroActual;
         private long tiempoAnima;
-        private long duracion;
+        private long duraciontota;
         
 	
 	/**
@@ -37,7 +37,7 @@ public class Base {
 		this.posY=posY;
 		icono = new ImageIcon(image);
                 frame=new ArrayList();
-                duracion=0;
+                duraciontota=0;
                 iniciar();
 	}
         public synchronized void iniciar(){
@@ -47,9 +47,9 @@ public class Base {
 	
         public synchronized void sumaCuadro(Image imagen, long duracion) {
         //se suma la duración del cuadro nuevo a la duración total de la animación
-        duracion += duracion; 
+        duraciontota += duracion; 
         //se añade el nuevo cuadro de animación
-        frame.add(new frameAnimado(imagen, duracion));
+        frame.add(new frameAnimado(imagen, duraciontota));
                                                                 
     }
         public synchronized void actualiza(long tiempoTranscurrido) {
@@ -57,8 +57,8 @@ public class Base {
            tiempoAnima += tiempoTranscurrido;  // se actualiza el tiempo de la animación
             
             //Se verifica el índice según el tiempo transcurrido
-            if (tiempoAnima >= duracion) {
-                tiempoAnima = tiempoAnima % duracion;
+            if (tiempoAnima >= duraciontota) {
+                tiempoAnima = tiempoAnima % duraciontota;
                 cuadroActual = 0; 
             }
             

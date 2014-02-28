@@ -64,7 +64,7 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
 	
 	private Malo banana;    //Objeto de la clase Raton
 	
-	private Vector vec;    // Objeto vector para agregar el puntaje.
+	
 	private String nombreArchivo;    //Nombre del archivo.
 	private String[] arr;    //Arreglo del archivo divido.
 	private long tiempoActual;	//Tiempo de control de la animación
@@ -101,9 +101,9 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
         //URL's de las imágenes de ambas animaciones y los sonidos
         fondo = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/fondo.jpg"));
         
-        pausaImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/pausa.gif"));
-        infoImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/infor.gif"));
-        creditos = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/creditos.gif"));
+        pausaImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/pause.gif"));
+        infoImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/info.gif"));
+        creditos = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/Creditos.gif"));
         Image barril0 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_000.gif"));
 	Image barril1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_001.gif"));
 	Image barril2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_002.gif"));
