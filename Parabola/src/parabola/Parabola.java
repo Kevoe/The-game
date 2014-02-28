@@ -16,6 +16,9 @@ public class Parabola {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Tiro juego= new Tiro();
+        juego.setVisible(true);
+        juego.setTitle("Bananas Launch");
         // TODO code application logic here
     }
     
