@@ -40,8 +40,8 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
 	private int puntaje;   // el puntaje de usuario.
 	private final int MIN = -5;    //Limite minimo al generar el numero random. 
 	private final int MAX = 6;    //Limite maximo al generar el numero random.
-	private static final int WIDTH = 1000;    //Ancho del JFrame
-	private static final int HEIGHT = 600;    //Alto del JFrame
+	private static final int WIDTH = 800;    //Ancho del JFrame
+	private static final int HEIGHT = 640;    //Alto del JFrame
 	private Image fondo;
         private boolean info;
         private Image pausaImagen;
@@ -51,8 +51,8 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
 	private Image gameover;	// Imagen al finalizar el juego.
 	private Graphics dbg;	// Objeto grafico
 	private SoundClip explosion; //sonido explosion
-    private SoundClip moneda; //sonido explosion
-    private SoundClip fondoM;
+        private SoundClip moneda; //sonido explosion
+        private SoundClip fondoM;
 	private int gravity;
         private boolean semueve;
         private int perdidos;
@@ -99,11 +99,11 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //cerrar aplicación al cerrar ventana
         
         //URL's de las imágenes de ambas animaciones y los sonidos
-        fondo = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/fondo.jpg"));
+        fondo = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/jungle.jpg"));
         
-        pausaImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/pause.gif"));
-        infoImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/info.gif"));
-        creditos = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/Creditos.gif"));
+        pausaImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/pause.png"));
+        infoImagen = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/info.png"));
+        creditos = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/Creditos.png"));
         Image barril0 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_000.gif"));
 	Image barril1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_001.gif"));
 	Image barril2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_002.gif"));
@@ -111,10 +111,7 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
 	Image barril4 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_004.gif"));
 	Image barril5 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_005.gif"));
 	Image barril6 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_006.gif"));
-	Image barril7 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_007.gif"));
-        
-        
-        
+	Image barril7 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/frame_007.gif"));        
 	Image banana1 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/b1.gif"));
 	Image banana2 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/b2.gif"));
         Image banana3 = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("images/b3.gif"));
@@ -131,10 +128,10 @@ public class Tiro extends JFrame implements Runnable, KeyListener, MouseListener
         
         explosion = new SoundClip("sounds/monkey.wav"); //sonido de explosion
         moneda = new SoundClip("sounds/money.wav");  //sonido de explosion
-        fondoM = new SoundClip("sounds/junglerock.mp3");  //sonido de explosion
+        fondoM = new SoundClip("sounds/jungle.wav");  //sonido de explosion
         
         //Se crea un nuevo objeto bueno y se añaden los cuadros de animación
-        barril = new Bueno(getWidth() / 2, getHeight() - 50, barril0);
+        barril = new Bueno(getWidth() / 2, getHeight()-50 , barril0);
         barril.sumaCuadro(barril0, 75);
         barril.sumaCuadro(barril1, 75);
         barril.sumaCuadro(barril2, 75);
